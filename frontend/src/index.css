@@ -296,6 +296,7 @@ select.error {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
 }
 
 .stats {
@@ -314,9 +315,54 @@ select.error {
 }
 
 .desc input {
+    font-size: 1em;
     height: 75px;
 }
 
 .desc button {
     background-color: white;
 }
+
+.chart {
+    position: relative;
+    width: 80%;
+    padding: 0;
+    margin-left: auto;
+    top: 1em;
+}
+
+.chart h1 {
+    text-align: center;
+}
+
+.chart body {
+    width: 600px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+img {
+    height: auto;
+    width: 20%;
+    position: relative;
+    margin-bottom: 2em;
+}
+
+.content {
+    display: flex;
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+}
+
+.vl {
+    position: relative;
+    left: 7em;
+    top: 3em;
+    border-left: 2px solid #d57170;
+    height: 40em;
+  }
+

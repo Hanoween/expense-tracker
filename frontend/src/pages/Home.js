@@ -17,7 +17,7 @@ const Home = () => {
                 console.log(json, expenses);
             }
         };
-
+        
         fetchExpenses();
     }, [dispatch]);
     return (
@@ -26,6 +26,7 @@ const Home = () => {
             <div className="expenses">
                 <div className="left">
                     <h1>Welcome!</h1>
+                    <img src={require("../images/logo.png")} />
                     <ExpenseForm />
                 </div>
                 <div className="list">

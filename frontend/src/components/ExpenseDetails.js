@@ -24,7 +24,7 @@ const ExpenseDetails = ({ expense }) => {
                 </div>
                 <div className="right">
                     <div className="amda">
-                            <p className="amount"><strong></strong>${expense.amount}</p>
+                            <p className="amount"><strong></strong>${expense.amount.toFixed(2)}</p>
                             <p>{formatDistanceToNow(new Date(expense.createdAt), { addSuffix: true })}</p>
                         <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
                     </div>

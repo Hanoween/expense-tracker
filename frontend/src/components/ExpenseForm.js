@@ -59,7 +59,7 @@ const ExpenseForm = () => {
                     onChange={(e) => { setCategory(e.target.value) }}
 
                 >
-                    <option className="selectCustom-trigger" value="" disabled selected>Select your option</option>
+                    <option className="selectCustom-trigger" value="" disabled selected>Select category</option>
                     <option className="selectCustom-option" value="education">Education</option>
                     <option className="selectCustom-option" value="transportation">Transportation</option>
                     <option className="selectCustom-option" value="rent">Rent</option>
