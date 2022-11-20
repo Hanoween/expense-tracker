@@ -6,18 +6,29 @@ import Navbar from "../components/Navbar";
 
 const Home = () => {
     const { expenses, dispatch } = useExpensesContext();
+    const date = new Date();
 
     useEffect(() => {
+        const deleteAll = async () => {
+            const response = await fetch('/api/expenses', {
+                method: 'DELETE'
+            });
+            const json = await response.json();
+
+            if (response.ok) {
+                dispatch({ type: 'DELETE_EXPENSES', payload: json})
+            }
+        }
         const fetchExpenses = async () => {
             const response = await fetch('/api/expenses');
             const json = await response.json();
 
             if (response.ok) {
                 dispatch({ type: 'SET_EXPENSES', payload: json });
-                console.log(json, expenses);
             }
         };
-        
+        if (date.getDate() == 1) deleteAll();
+
         fetchExpenses();
     }, [dispatch]);
     return (
@@ -30,7 +41,7 @@ const Home = () => {
                     <ExpenseForm />
                 </div>
                 <div className="list">
-                    <h1>Latest expenses</h1>
+                    <h1>Latest expenses this month</h1>
                     {expenses && expenses.map(expense => (
                         <ExpenseDetails key={expense._id} expense={expense} />
                     ))}

@@ -48,9 +48,16 @@ const deleteExpense = async (req, res) => {
     res.status(200).json(expense);
 };
 
+const deleteExpenses = async (req, res) => {
+    const expenses = await Expense.deleteMany({});
+
+    res.status(200).json(expenses);
+}
+
 module.exports = {
     getExpenses,
     getExpense,
     createExpense,
-    deleteExpense
+    deleteExpense,
+    deleteExpenses
 }
